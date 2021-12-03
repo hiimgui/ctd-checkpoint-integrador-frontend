@@ -1,0 +1,21 @@
+$homeBlack: rgba(0, 0, 0, 0.87);
+
+.main-div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.main-footer {
+    background-color: $homeBlack;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-color: grey;
+    }
+}
