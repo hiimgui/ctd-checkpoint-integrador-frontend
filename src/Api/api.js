@@ -8,13 +8,24 @@ const Data = () => {
   //   `http://ec2-18-206-40-162.compute-1.amazonaws.com:8080/`
   // );
   const [responseData, setResponseData] = useState([]);
-  useEffect(() => {
+  const data = () => {
+    console.log("oi");
     api
-      .get(`${api}/products/categories`)
-      .then((res) => setResponseData(res.data))
-      .catch((err) => console.log(err));
-  }, [api]);
-
-  return <>{console.log(responseData)}</>;
+      .get(`/products/categories`)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  data();
+  // get(rota`)
+  //           .then(response => {
+  //               console.log(response.data);
+  //           })
+  //           .catch(error => {
+  //               console.log(error);
+  //           });
 };
 export default Data;
