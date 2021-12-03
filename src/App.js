@@ -1,12 +1,8 @@
 import "./App.scss";
-import RouteList from "./Routes";
-import Home from "./Pages/Home";
+import  RouteList from './Routes/';
 function App() {
   return (
-    <>
-      <Home />
-      {/* <RouteList /> */}
-    </>
+      <RouteList />
   );
 }
 
