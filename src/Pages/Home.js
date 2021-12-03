@@ -1,9 +1,11 @@
 import Header from "../Components/Header/Header";
+import { Carousel } from "../Components/Carousel";
 const Home = () => {
   return (
     <>
       <Header />
-      Essa é a Home que terá um carrossel
+      <Carousel />
+      
     </>
   );
 };
