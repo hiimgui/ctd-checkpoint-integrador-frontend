@@ -1,6 +1,4 @@
 import axios from "axios";
-const api = axios.create({
-  baseUrl: "ec2-52-90-57-174.compute-1.amazonaws.com:8080",
-});
+const api = axios.create(process.env.BASE_URL);
 
 export default api;
