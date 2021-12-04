@@ -1,31 +1,59 @@
 .carousel {
-    margin-block: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
 
-    .slick-list {
-        margin: 0 -10px;
-    }
     .slick-slide > div {
         padding: 0 10px;
     }
 
-    .slick-prev, .slick-next{
+    .slick-prev,
+    .slick-next {
         z-index: 2;
         top: 50%;
-        transform: translateY(-50%);
         background: transparent;
         border: none;
         outline: none;
         color: #ccc;
         font-size: 2rem;
-        font-weight: bold;
         padding: 0;
         width: 2rem;
         height: 2rem;
         line-height: 2rem;
         text-align: center;
         cursor: pointer;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
     }
 
-}
+    .slick-prev {
+        transform: translate(80%, -50%);
+    }
 
+    .slick-next {
+        transform: translate(-80%, -50%)
+    }
+
+    .card{
+
+        &-text{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &-subtitle{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-img-top{
+            height:280px;
+            object-fit: contain;
+        }
+
+        >.btn{
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+}

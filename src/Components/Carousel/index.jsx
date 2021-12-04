@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Slider from "react-slick";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Container } from "react-bootstrap";
-import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaShoppingCart } from 'react-icons/fa';
+
+import api from '../../Api/api';
 
 import { Link } from "react-router-dom";
 
@@ -14,62 +16,74 @@ import "./styles.scss";
 
 export const Carousel = () => {
 
+    const [data, setData] = React.useState([]);
+
+    useEffect(() => {
+        api.get(`${process.env.REACT_APP_API_URL}/products`).then(response => {
+            setData(response.data);
+            console.log(response.data);
+        }).catch(error => {
+            console.log(error);
+        }
+        );
+    }, []);
+
 
     const settings = {
         className: "carousel",
         dots: false,
-        infinite: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
         arrows: true,
-        centerMode: true,
         prevArrow: <NextArrow />,
         nextArrow: <PrevArrow />,
     };
 
     return (
-        <Container>
+        <Container fluid="md">
+        <h3 className="mt-4">Nossos Produtos  <Link className="me-3" to="/">Ver todas ofertas</Link></h3>           
             <Slider {...settings}>
-                <CardCarousel />
-                <CardCarousel />
-                <CardCarousel />
-                <CardCarousel />
-                <CardCarousel />
-                <CardCarousel />
+
+                {data.map(product =>
+                    <CardCarousel {...product} />
+                )}
+
             </Slider>
-            <Link className="btn btn-outline-primary me-3" to="/">Ver todas ofertas</Link>
 
         </Container>
     );
 }
 
 
-const CardCarousel = () => {
+const CardCarousel = ({ title, price, category, description, image }) => {
     return (
         <Card>
-            <Card.Img variant="top" src="https://drive.google.com/uc?export=view&id=12NX2yLf1N6MweJk7JD3Iw09ktOJrFTCb" />
+            <Card.Img variant="top" src={image} />
             <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
+                <Card.Title className="text-center">{title}</Card.Title>
+                <Card.Text className="text-muted" >
+                    {description}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Card.Subtitle as="h3">
+                    <span >{"R$ " + price.toString()}</span>
+                    <Button variant="outline-primary" size="sm">Saiba mais</Button>
+                </Card.Subtitle>
             </Card.Body>
+            <Button variant="primary" className="text-uppercase"><FaShoppingCart className="me-2" /> Comprar</Button>
         </Card>
     );
 }
 
-function NextArrow({ currentSlide, slideCount, ...props }){
+function NextArrow({ currentSlide, slideCount, ...props }) {
     return (
-    <FaChevronCircleLeft {...props} />
+        <FaChevronLeft {...props} />
     );
 }
 
-function PrevArrow({ currentSlide, slideCount, ...props }){
+function PrevArrow({ currentSlide, slideCount, ...props }) {
     return (
-    <FaChevronCircleRight {...props} />
+        <FaChevronRight {...props} />
     );
 }
