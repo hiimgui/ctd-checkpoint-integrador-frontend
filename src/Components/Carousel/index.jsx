@@ -21,7 +21,6 @@ export const Carousel = () => {
     useEffect(() => {
         api.get(`${process.env.REACT_APP_API_URL}/products`).then(response => {
             setData(response.data);
-            console.log(response.data);
         }).catch(error => {
             console.log(error);
         }
@@ -31,23 +30,42 @@ export const Carousel = () => {
 
     const settings = {
         className: "carousel",
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 500,
+        autoplaySpeed: 3000,
+        autoplay: true,
+        pauseOnHover: true,
         slidesToShow: 3,
         slidesToScroll: 3,
         arrows: true,
         prevArrow: <NextArrow />,
         nextArrow: <PrevArrow />,
+        customPaging: function(i) {
+            return (
+              <div className="dots-simbol">
+                </div>
+            );
+          },
     };
+
+    const getRandomItens = (items,number) => {
+        items.sort(function() {return 0.5 - Math.random()})
+        return items.slice(0,number);
+    }
+        
 
     return (
         <Container fluid="md">
-        <h3 className="mt-4">Nossos Produtos  <Link className="me-3" to="/">Ver todas ofertas</Link></h3>           
+        <div className="mt-4 mb-1 d-flex flex-row align-items-center bd-highlight text-uppercase fw-bold ">
+        <h3 className="flex-fill text-center">Destaques</h3> 
+        <Link to="/" className="align-self-end  me-3">Ver todas ofertas</Link>
+        </div>          
+        
             <Slider {...settings}>
 
-                {data.map(product =>
-                    <CardCarousel {...product} />
+                {getRandomItens(data, 9).map(product =>
+                    <CardCarousel key={product.id} {...product} />
                 )}
 
             </Slider>
@@ -61,7 +79,7 @@ const CardCarousel = ({ title, price, category, description, image }) => {
     return (
         <Card>
             <Card.Img variant="top" src={image} />
-            <Card.Body>
+            <Card.Body className="flex-fill">
                 <Card.Title className="text-center">{title}</Card.Title>
                 <Card.Text className="text-muted" >
                     {description}

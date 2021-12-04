@@ -1,9 +1,22 @@
+@import "../../App.scss";
+
 .carousel {
     margin-bottom: 2rem;
     padding: 0 2rem;
 
-    .slick-slide > div {
-        padding: 0 10px;
+    .slick-track {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+
+        .slick-slide {
+            height: inherit;
+
+            > div {
+                padding: 0 10px;
+                height: 100%;
+            }
+        }
     }
 
     .slick-prev,
@@ -29,29 +42,45 @@
     }
 
     .slick-next {
-        transform: translate(-80%, -50%)
+        transform: translate(-80%, -50%);
     }
 
-    .card{
+    .slick-dots li {
+        opacity: 0.25;
 
-        &-text{
+        .dots-simbol {
+            width: 25px;
+            height: 5px;
+            background-color: rgb(26, 25, 25);
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        &.slick-active {
+            opacity: 1;
+        }
+    }
+
+    .card {
+        height: 100%;
+        &-text {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        &-subtitle{
+        &-subtitle {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        &-img-top{
-            height:280px;
+        &-img-top {
+            height: 280px;
             object-fit: contain;
         }
 
-        >.btn{
+        > .btn {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
