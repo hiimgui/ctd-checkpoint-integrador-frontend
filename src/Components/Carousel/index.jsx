@@ -17,7 +17,7 @@ export const Carousel = () => {
   const [data, setData] = React.useState([]);
   useEffect(() => {
     api
-      .get(`http://ec2-184-72-170-163.compute-1.amazonaws.com:8080/products`)
+      .get(`//ec2-184-72-170-163.compute-1.amazonaws.com:8080/products`)
       .then((response) => {
         setData(response.data);
       })
