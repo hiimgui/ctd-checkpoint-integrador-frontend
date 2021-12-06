@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./styles.scss";
 import { CgShoppingCart } from "react-icons/cg";
 import Navbar from "react-bootstrap/Navbar";
