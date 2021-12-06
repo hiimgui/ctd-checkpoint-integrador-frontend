@@ -1,7 +1,13 @@
+import CardProduct from "../Components/Cards";
+import Header from "../Components/Header/Header"
+import Footer from "../Components/Footer/Footer"
 const Products = () => {
     return(
         <>
-        <h1>Pagina de produtos</h1>
+        <Header />
+        
+        <CardProduct />
+        <Footer />
         </>
     )
 }

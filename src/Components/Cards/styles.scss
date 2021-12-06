@@ -1,0 +1,27 @@
+img {
+  max-width: 100%;
+  width: 150px;
+  height: 150px;
+}
+
+span {
+  font-weight: bold;
+  font-size: large;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.cardDiv {
+  border: 1px solid black;
+  width: 300px;
+  text-align: center;
+
+  h4 {
+    padding: 10px;
+  }
+  p {
+    padding: 10px;
+  }
+}
