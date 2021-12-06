@@ -18,7 +18,7 @@ export const Carousel = () => {
 
   useEffect(() => {
     api
-      .get(`${process.env.REACT_APP_API_URL}/products`)
+      .get(`/products`)
       .then((response) => {
         setData(response.data);
       })
