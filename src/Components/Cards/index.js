@@ -12,6 +12,10 @@ const CardProduct = () => {
         console.log(error);
       });
   }, []);
-  return;
+  return (
+    <>
+    <h1> Pagina de produtos</h1>
+    </>
+  )
 };
 export default CardProduct;
