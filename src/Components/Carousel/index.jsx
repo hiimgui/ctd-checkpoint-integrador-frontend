@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import Slider from "react-slick";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
-import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaShoppingCart } from "react-icons/fa";
+
+import api from "../../Api/api";
 
 import { Link } from "react-router-dom";
 
@@ -11,65 +13,87 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "./styles.scss";
 
-
 export const Carousel = () => {
+  const [data, setData] = React.useState([]);
+  useEffect(() => {
+    api
+      .get(`//ec2-184-72-170-163.compute-1.amazonaws.com:8080/products`)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
+  const settings = {
+    className: "carousel",
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplaySpeed: 3000,
+    autoplay: true,
+    pauseOnHover: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: true,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    customPaging: function (i) {
+      return <div className="dots-simbol"></div>;
+    },
+  };
 
-    const settings = {
-        className: "carousel",
-        dots: false,
-        infinite: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        arrows: true,
-        centerMode: true,
-        prevArrow: <NextArrow />,
-        nextArrow: <PrevArrow />,
-    };
+  const getRandomItens = (items, number) => {
+    items.sort(function () {
+      return 0.5 - Math.random();
+    });
+    return items.slice(0, number);
+  };
 
-    return (
-        <Container>
-            <Slider {...settings}>
-                <CardCarousel />
-                <CardCarousel />
-                <CardCarousel />
-                <CardCarousel />
-                <CardCarousel />
-                <CardCarousel />
-            </Slider>
-            <Link className="btn btn-outline-primary me-3" to="/">Ver todas ofertas</Link>
+  return (
+    <Container fluid="md">
+      <div className="mt-4 mb-1 d-flex flex-row align-items-center bd-highlight text-uppercase fw-bold ">
+        <h3 className="flex-fill text-center">Destaques</h3>
+        <Link to="/" className="align-self-end  me-3">
+          Ver todas ofertas
+        </Link>
+      </div>
 
-        </Container>
-    );
+      <Slider {...settings}>
+        {getRandomItens(data, 9).map((product) => (
+          <CardCarousel key={product.id} {...product} />
+        ))}
+      </Slider>
+    </Container>
+  );
+};
+
+const CardCarousel = ({ title, price, category, description, image }) => {
+  return (
+    <Card>
+      <Card.Img variant="top" src={image} />
+      <Card.Body className="flex-fill">
+        <Card.Title className="text-center">{title}</Card.Title>
+        <Card.Text className="text-muted">{description}</Card.Text>
+        <Card.Subtitle as="h3">
+          <span>{"R$ " + price.toString()}</span>
+          <Button variant="outline-primary" size="sm">
+            Saiba mais
+          </Button>
+        </Card.Subtitle>
+      </Card.Body>
+      <Button variant="primary" className="text-uppercase">
+        <FaShoppingCart className="me-2" /> Comprar
+      </Button>
+    </Card>
+  );
+};
+
+function NextArrow({ currentSlide, slideCount, ...props }) {
+  return <FaChevronRight {...props} />;
 }
 
-
-const CardCarousel = () => {
-    return (
-        <Card>
-            <Card.Img variant="top" src="https://drive.google.com/uc?export=view&id=12NX2yLf1N6MweJk7JD3Iw09ktOJrFTCb" />
-            <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-        </Card>
-    );
-}
-
-function NextArrow({ currentSlide, slideCount, ...props }){
-    return (
-    <FaChevronCircleLeft {...props} />
-    );
-}
-
-function PrevArrow({ currentSlide, slideCount, ...props }){
-    return (
-    <FaChevronCircleRight {...props} />
-    );
+function PrevArrow({ currentSlide, slideCount, ...props }) {
+  return <FaChevronLeft {...props} />;
 }
