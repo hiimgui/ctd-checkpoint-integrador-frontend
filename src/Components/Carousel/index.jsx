@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import { FaChevronLeft, FaChevronRight, FaShoppingCart } from "react-icons/fa";
 
-import Api from "../../Api/Api";
+import api from "../../Api/api";
 
 import { Link } from "react-router-dom";
 
@@ -16,7 +16,8 @@ import "./styles.scss";
 export const Carousel = () => {
   const [data, setData] = React.useState([]);
   useEffect(() => {
-    Api.get(`http://ec2-184-72-170-163.compute-1.amazonaws.com:8080/products`)
+    api
+      .get(`http://ec2-184-72-170-163.compute-1.amazonaws.com:8080/products`)
       .then((response) => {
         setData(response.data);
       })
