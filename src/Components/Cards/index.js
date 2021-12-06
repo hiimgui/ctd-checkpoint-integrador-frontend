@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import api from "../../Api/api";
+import api from "../../Api/Api";
 const CardProduct = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
