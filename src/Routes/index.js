@@ -17,7 +17,6 @@ const Routlist = () => {
       <Route path="product/:id" element={<Product />} />
       <Route path="*" element={<Error404 />} />
     </Routes>
-    <Footer />
   </BrowserRouter>
     )
 };

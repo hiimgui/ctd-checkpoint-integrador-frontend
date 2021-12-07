@@ -1,8 +1,14 @@
 .product-row {
+    height: 50vh;
+    min-height: 500px;
+
+    &-image-container {
+        height: 100%;
+    }
+
     &-image {
+        height: 100%;
         width: 100%;
-        height: auto;
-        max-height: 558px;
         object-fit: contain;
     }
 }

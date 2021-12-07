@@ -17,7 +17,7 @@ export const Carousel = () => {
   const [data, setData] = React.useState([]);
   useEffect(() => {
     api
-      .get(`http://ec2-184-72-170-163.compute-1.amazonaws.com:8080/products`)
+      .get(`products`)
       .then((response) => {
         setData(response.data);
       })
@@ -104,7 +104,7 @@ const CardCarousel = ({id, title, price, category, description, image }) => {
               currency: "BRL"
               }).format(price)}
             </span>
-            <Link to={`/product/${id}`} variant="outline-primary" size="sm">
+            <Link to={`/product/${id}`} className="btn btn-outline-primary" size="sm">
               Saiba mais
             </Link>
           </Card.Subtitle>

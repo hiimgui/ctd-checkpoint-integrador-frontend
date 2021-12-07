@@ -8,25 +8,25 @@ import './styles.scss';
 const ProductDetails = ({ title, price, category, description, image }) => {
 
     return (
-        <Container>
+        <Container fluid="md">
             <h1 className="mt-4">{title}</h1>
             <Row className="product-row">
-                <Col xs={12} md={8}>
+                <Col xs={12} md={8} className="product-row-image-container">
                     <Image className="product-row-image" src={image} alt={title} fluid />
                 </Col>
-                <Col xs={6} md={4} className="d-flex flex-column">
+                <Col xs={12} md={4} className="d-flex flex-column">
                     <div>
                         <Badge pill bg="secondary">{category}</Badge>
                     </div>
                     <Row className="my-3">
-                        <Col xs={12} md={6}>
+                        <Col  md={6}>
                             <h3>{new Intl.NumberFormat("pt-BR", {
                                 style: "currency",
                                 currency: "BRL"
                             }).format(price)}
                             </h3>
                         </Col>
-                        <Col xs={12} md={6}>
+                        <Col  md={6}>
                             <Button variant="primary" className="text-uppercase">
                                 <FaShoppingCart className="me-2" /> Comprar
                             </Button>

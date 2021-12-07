@@ -1,7 +1,7 @@
 import "./styles.scss";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import api from "../../Api/api";
+import api from "../../services/api";
 const CardProduct = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
