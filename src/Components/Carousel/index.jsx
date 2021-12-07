@@ -17,7 +17,7 @@ export const Carousel = () => {
   const [data, setData] = React.useState([]);
   useEffect(() => {
     api
-      .get(`http://ec2-184-72-170-163.compute-1.amazonaws.com:8080/products`)
+      .get(`/products`)
       .then((response) => {
         setData(response.data);
       })
@@ -43,7 +43,6 @@ export const Carousel = () => {
       return <div className="dots-simbol"></div>;
     },
     responsive: [
-
       {
         breakpoint: 860,
         settings: {
@@ -57,12 +56,10 @@ export const Carousel = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-
         },
       },
     ],
   };
-
 
   const getRandomItens = (items, number) => {
     items.sort(function () {
@@ -72,9 +69,11 @@ export const Carousel = () => {
   };
 
   return (
-    <Container fluid="lg" >
+    <Container fluid="lg">
       <div className="mt-4 mb-1 d-flex flex-row align-items-center bd-highlight text-uppercase fw-bold ">
-        <h3 className="flex-fill text-center fw-bold text-secondary">Destaques</h3>
+        <h3 className="flex-fill text-center fw-bold text-secondary">
+          Destaques
+        </h3>
         <Link to="/" className="align-self-end  me-3">
           Ver todas ofertas
         </Link>
@@ -89,8 +88,7 @@ export const Carousel = () => {
   );
 };
 
-const CardCarousel = ({id, title, price, category, description, image }) => {
-
+const CardCarousel = ({ id, title, price, category, description, image }) => {
   return (
     <Card>
       <Card.Img variant="top" src={image} />
@@ -99,9 +97,10 @@ const CardCarousel = ({id, title, price, category, description, image }) => {
         <div>
           <Card.Text className="text-muted">{description}</Card.Text>
           <Card.Subtitle as="h3">
-            <span>{new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL"
+            <span>
+              {new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
               }).format(price)}
             </span>
             <Link to={`/product/${id}`} variant="outline-primary" size="sm">

@@ -4,10 +4,10 @@ import Footer from "../Components/Footer/Footer"
 const Products = () => {
     return(
         <>
-        <Header />
+
         
         <CardProduct />
-        <Footer />
+     
         </>
     )
 }
