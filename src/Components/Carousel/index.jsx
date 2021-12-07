@@ -17,7 +17,7 @@ export const Carousel = () => {
   const [data, setData] = React.useState([]);
 
   useEffect(() => {
-    api.get('/products')
+    api.get('products')
       .then((response) => {
         setData(response.data);
       })
@@ -31,7 +31,7 @@ export const Carousel = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3500,
     autoplay: true,
     pauseOnHover: true,
     slidesToShow: 3,
@@ -42,7 +42,27 @@ export const Carousel = () => {
     customPaging: function (i) {
       return <div className="dots-simbol"></div>;
     },
+    responsive: [
+
+      {
+        breakpoint: 860,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+        },
+      },
+    ],
   };
+
 
   const getRandomItens = (items, number) => {
     items.sort(function () {
@@ -52,9 +72,9 @@ export const Carousel = () => {
   };
 
   return (
-    <Container fluid="md">
+    <Container fluid="lg" >
       <div className="mt-4 mb-1 d-flex flex-row align-items-center bd-highlight text-uppercase fw-bold ">
-        <h3 className="flex-fill text-center">Destaques</h3>
+        <h3 className="flex-fill text-center fw-bold text-secondary">Destaques</h3>
         <Link to="/" className="align-self-end  me-3">
           Ver todas ofertas
         </Link>
@@ -69,19 +89,26 @@ export const Carousel = () => {
   );
 };
 
-const CardCarousel = ({ title, price, category, description, image }) => {
+const CardCarousel = ({id, title, price, category, description, image }) => {
+
   return (
     <Card>
       <Card.Img variant="top" src={image} />
-      <Card.Body className="flex-fill">
+      <Card.Body className="flex-fill d-flex flex-column justify-content-between">
         <Card.Title className="text-center">{title}</Card.Title>
-        <Card.Text className="text-muted">{description}</Card.Text>
-        <Card.Subtitle as="h3">
-          <span>{"R$ " + price.toString()}</span>
-          <Button variant="outline-primary" size="sm">
-            Saiba mais
-          </Button>
-        </Card.Subtitle>
+        <div>
+          <Card.Text className="text-muted">{description}</Card.Text>
+          <Card.Subtitle as="h3">
+            <span>{new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL"
+              }).format(price)}
+            </span>
+            <Link to={`/product/${id}`} variant="outline-primary" size="sm">
+              Saiba mais
+            </Link>
+          </Card.Subtitle>
+        </div>
       </Card.Body>
       <Button variant="primary" className="text-uppercase">
         <FaShoppingCart className="me-2" /> Comprar

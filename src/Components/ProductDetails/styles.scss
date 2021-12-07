@@ -1,0 +1,8 @@
+.product-row {
+    &-image {
+        width: 100%;
+        height: auto;
+        max-height: 558px;
+        object-fit: contain;
+    }
+}
