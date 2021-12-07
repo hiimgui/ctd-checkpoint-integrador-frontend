@@ -1,0 +1,33 @@
+.Cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    margin-top: 30px;
+
+}
+
+.Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.CardStyle {
+    background-color: transparent;
+    color: black;
+    border: transparent;
+}
+
+.ImgStyle {
+    object-fit: fill;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.icons {
+    color: black;
+    display: inline-block;
+    margin: 0 0 0 20%;   
+
+}
