@@ -1,10 +1,9 @@
 $homeBlack: rgba(0, 0, 0, 0.87);
 
 .main-div {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: -1;
 }
 
 .main-footer {

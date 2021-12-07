@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar className="NavStyle"collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/">CTD E-Commerce</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
