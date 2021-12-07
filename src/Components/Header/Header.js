@@ -7,15 +7,29 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <Navbar className="NavStyle"collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar
+        className="NavStyle"
+        collapseOnSelect
+        expand="lg"
+        bg="dark"
+        variant="dark"
+      >
         <Container>
-          <Navbar.Brand as={Link} to="/">CTD E-Commerce</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            CTD E-Commerce
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/">HOME</Nav.Link>
-              <Nav.Link as={Link} to="/Products">PRODUTOS</Nav.Link>
-              <Nav.Link as={Link} to="#Sobre">SOBRE</Nav.Link>
+              <Nav.Link as={Link} to="/">
+                HOME
+              </Nav.Link>
+              <Nav.Link as={Link} to="/Products">
+                PRODUTOS
+              </Nav.Link>
+              <Nav.Link as={Link} to="/Sobre">
+                SOBRE
+              </Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href="#carrinho">
