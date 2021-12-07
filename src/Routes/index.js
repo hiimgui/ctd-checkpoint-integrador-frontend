@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Error404 from "../Pages/404";
 import Home from "../Pages/Home.js";
 import Products from "../Pages/Products"
+import AboutUs from "../Pages/About.js"
 //Use params
 const Routlist = () => {
     return (
@@ -9,6 +10,7 @@ const Routlist = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Products" element={<Products />} />
+      <Route path="/Sobre" element={<AboutUs />} />
       <Route path="*" element={<Error404 />} />
     </Routes>
   </BrowserRouter>
