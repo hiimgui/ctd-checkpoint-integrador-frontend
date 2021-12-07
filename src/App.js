@@ -3,7 +3,9 @@ import RouteList from "./Routes";
 import "dotenv/config";
 function App() {
   return (
+    <>
       <RouteList />
+    </>
   );
 }
 
