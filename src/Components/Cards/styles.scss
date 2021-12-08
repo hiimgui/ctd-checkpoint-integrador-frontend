@@ -1,9 +1,11 @@
-img {
+.products-img {
   max-width: 100%;
   width: 150px;
   height: 150px;
 }
-
+a.btn-link {
+  text-decoration: none;
+}
 span {
   font-weight: bold;
   font-size: large;
@@ -12,6 +14,7 @@ span {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  justify-content: center;
 }
 .cardDiv {
   border: 1px solid black;

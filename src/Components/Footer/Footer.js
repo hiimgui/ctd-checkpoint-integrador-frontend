@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './style.scss';
+import './style.scss';
 import { DiDatabase, DiJavascript1 } from 'react-icons/di';
 import { SiSpringboot } from 'react-icons/si';
 import { GrReactjs } from 'react-icons/gr';
@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <>
 
-            <div className="main-div">
+            <div className="main-div pt-4">
 
                 <section className="main-footer">
                     <footer className="text-center text-white">
