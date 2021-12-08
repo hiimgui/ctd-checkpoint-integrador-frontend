@@ -1,9 +1,11 @@
-img {
+.products-img {
   max-width: 100%;
   width: 150px;
   height: 150px;
 }
-
+a.btn-link {
+  text-decoration: none;
+}
 span {
   font-weight: bold;
   font-size: large;

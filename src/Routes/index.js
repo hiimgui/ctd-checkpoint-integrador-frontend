@@ -14,6 +14,7 @@ const Routlist = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Products" element={<Products />} />
+        <Route path="/Products/:filtro" element={<Products />} />
         <Route path="product/:id" element={<Product />} />
         <Route path="/Sobre" element={<AboutUs />} />
         <Route path="*" element={<Error404 />} />

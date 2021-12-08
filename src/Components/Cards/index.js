@@ -2,14 +2,29 @@ import "./styles.scss";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import api from "../../services/api";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+
 const CardProduct = () => {
+  const { filtro } = useParams();
   const [data, setData] = useState([]);
+  // const [filtro, setFiltro] = useState("");
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     api
-      .get(`/products`)
+      .get(`/products${filtro ? `/category/${filtro}` : ""}`)
       .then((response) => {
         setData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [filtro]);
+  useEffect(() => {
+    api
+      .get(`/products/categories`)
+      .then((response) => {
+        setCategories(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -18,19 +33,32 @@ const CardProduct = () => {
   return (
     <>
       <div className="filtros">
-        <button>VIDEO</button>
-        <button>Informatica</button>
-        <button>Smartphones</button>
-        <button>Conectividade</button>
-        <button>Áudio</button>
-        <button>Periféricos</button>
+        <Link className="btn btn-link btn-primary mx-1 my-3" to={`/Products`}>
+          Todos
+        </Link>
+        {categories.map((category) => (
+          <Link
+            className="btn btn-primary mx-1 my-3"
+            to={`/Products/${category}`}
+          >
+            {category}
+          </Link>
+        ))}
       </div>
       <Container className="grid" fluid>
         {data.map((product) => {
           return (
-            <Link to = {`/product/${product.id}`} className="cardDiv" key={product.id}>
+            <Link
+              to={`/product/${product.id}`}
+              className="cardDiv"
+              key={product.id}
+            >
               <h6>{product.category}</h6>
-              <img src={product.image} alt="produto-img" />
+              <img
+                className="products-img"
+                src={product.image}
+                alt="produto-img"
+              />
               <h4>{product.title}</h4>
               <p>{product.description} </p>
               <span>R$ {product.price},00</span>
@@ -38,8 +66,6 @@ const CardProduct = () => {
           );
         })}
       </Container>
-
-      <h1> Pagina de produtos vai ter mtos cards aqui</h1>
     </>
   );
 };
