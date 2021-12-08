@@ -1,9 +1,8 @@
-
-const Card = () => {
+const Card = ({id}) => {
     return(
         <>
         <div>
-            <img src="" alt="imgproduto"></img>
+              <img src="" alt="imgproduto"></img>                       
             <h4>Titulo</h4>
             <p>descricao do produto <span>PRECO</span></p>
         </div>

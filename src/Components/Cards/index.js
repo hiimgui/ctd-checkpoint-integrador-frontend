@@ -2,6 +2,7 @@ import "./styles.scss";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import api from "../../services/api";
+import { Link } from "react-router-dom";
 const CardProduct = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -27,13 +28,13 @@ const CardProduct = () => {
       <div className="grid">
         {data.map((product) => {
           return (
-            <div className="cardDiv" key={product.id}>
+            <Link to = {`/product/${product.id}`} className="cardDiv" key={product.id}>
               <h6>{product.category}</h6>
               <img src={product.image} alt="produto-img" />
               <h4>{product.title}</h4>
               <p>{product.description} </p>
               <span>R$ {product.price},00</span>
-            </div>
+            </Link>
           );
         })}
       </div>
