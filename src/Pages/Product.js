@@ -1,5 +1,5 @@
 import ProductDetails from "../Components/ProductDetails";
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Helmet } from "react-helmet";
 import api from "../services/api.js";
@@ -16,7 +16,7 @@ const Product = () => {
         api.get(`products/${id}`)
             .then(response => setProduct(response.data))
             .catch(err => console.log(err));
-    }, [])
+    }, [id])
 
 
     return (

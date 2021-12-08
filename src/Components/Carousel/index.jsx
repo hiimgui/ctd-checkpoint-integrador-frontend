@@ -69,12 +69,10 @@ export const Carousel = () => {
   };
 
   return (
-    <Container fluid="lg">
-      <div className="mt-4 mb-1 d-flex flex-row align-items-center bd-highlight text-uppercase fw-bold ">
-        <h3 className="flex-fill text-center fw-bold text-secondary">
-          Destaques
-        </h3>
-        <Link to="/" className="align-self-end  me-3">
+    <Container fluid="lg" >
+      <div className="mt-4 mb-1 d-flex flex-row align-items-center text-uppercase fw-bold ">
+        <h3 className="flex-fill text-center fw-bold text-secondary">Destaques</h3>
+        <Link to="/Products" className="align-self-end  me-3">
           Ver todas ofertas
         </Link>
       </div>
@@ -103,7 +101,7 @@ const CardCarousel = ({ id, title, price, category, description, image }) => {
                 currency: "BRL",
               }).format(price)}
             </span>
-            <Link to={`/product/${id}`} variant="outline-primary" size="sm">
+            <Link to={`/product/${id}`} className="btn btn-outline-primary" size="sm">
               Saiba mais
             </Link>
           </Card.Subtitle>
