@@ -24,7 +24,6 @@ const Routlist = () => {
         </Routes>
         <Footer />
       </CartContextProvider>
-
     </BrowserRouter>
   );
 };
