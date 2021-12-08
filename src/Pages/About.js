@@ -7,10 +7,14 @@ import GuiP from "../../src/Assets/guip.jpg";
 import GuiS from "../../src/Assets/guis.jpg";
 import Rener from "../../src/Assets/rener.jpg";
 import Rodrigo from "../../src/Assets/rodrigo.jpg";
+import { Helmet } from "react-helmet";
 
 const AboutUs = () => {
   return (
     <>
+       <Helmet>
+        <title>{`${AboutUs.title ? "CTD Eletrônicos | " + AboutUs.title : "Sobre Nós"}`}</title>
+    </Helmet>
       <div className="text-center text-black" style={{ marginTop: "30px" }}>
         <h3>Um pouco sobre nossos desenvolvedores.</h3>
       </div>
