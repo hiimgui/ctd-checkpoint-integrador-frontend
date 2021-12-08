@@ -73,7 +73,7 @@ export const Carousel = () => {
     <Container fluid="lg" >
       <div className="mt-4 mb-1 d-flex flex-row align-items-center text-uppercase fw-bold ">
         <h3 className="flex-fill text-center fw-bold text-secondary">Destaques</h3>
-        <Link to="/" className="align-self-end  me-3">
+        <Link to="/Products" className="align-self-end  me-3">
           Ver todas ofertas
         </Link>
       </div>
