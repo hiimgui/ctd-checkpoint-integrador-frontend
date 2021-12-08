@@ -1,25 +1,28 @@
-.Cards {
+.cards {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 1rem;
+    padding: 3rem;
     margin-top: 30px;
+    margin-right: 50px;
+    width: 15rem;
 
 }
 
-.Container {
+.container {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-.CardStyle {
+.cardStyle {
     background-color: transparent;
     color: black;
     border: transparent;
 }
 
-.ImgStyle {
+.imgStyle {
+    margin-left: 30px;
     object-fit: fill;
     max-width: 100%;
     border-radius: 50%;
@@ -28,6 +31,34 @@
 .icons {
     color: black;
     display: inline-block;
-    margin: 0 0 0 20%;   
+    margin: 0 0 0 17%;   
 
+}
+
+.cardName {
+    width: 220px;
+}
+
+.cardTitleB {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cardTitleS {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.cardTitleRe {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.cardTitleRo {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.cardLink {
+    width: 220px;
 }
