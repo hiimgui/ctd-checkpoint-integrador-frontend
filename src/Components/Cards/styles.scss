@@ -12,6 +12,7 @@ span {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  justify-content: center;
 }
 .cardDiv {
   border: 1px solid black;

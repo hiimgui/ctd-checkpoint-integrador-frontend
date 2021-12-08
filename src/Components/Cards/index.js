@@ -25,7 +25,7 @@ const CardProduct = () => {
         <button>Áudio</button>
         <button>Periféricos</button>
       </div>
-      <div className="grid">
+      <Container className="grid" fluid>
         {data.map((product) => {
           return (
             <Link to = {`/product/${product.id}`} className="cardDiv" key={product.id}>
@@ -37,7 +37,7 @@ const CardProduct = () => {
             </Link>
           );
         })}
-      </div>
+      </Container>
 
       <h1> Pagina de produtos vai ter mtos cards aqui</h1>
     </>
