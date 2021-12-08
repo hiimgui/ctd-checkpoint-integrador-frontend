@@ -13,7 +13,7 @@ const AboutUs = () => {
   return (
     <>
        <Helmet>
-        <title>{`${AboutUs.title ? "CTD Eletrônicos | " + AboutUs.title : "Sobre Nós"}`}</title>
+        <title>{`${AboutUs.title ? "CTD Eletrônicos" + AboutUs.title : "Sobre Nós"}`}</title>
     </Helmet>
       <div className="text-center text-black" style={{ marginTop: "30px" }}>
         <h3>Um pouco sobre nossos desenvolvedores.</h3>
@@ -21,7 +21,7 @@ const AboutUs = () => {
       <article className="container" style={{ marginBottom: "130px" }}>
         <div className="title d-flex flex-column flex-sm-row justify-content-space-around align-items-center">
           <div className="cards">
-            <Card className="cardStyle" style={{ width: "10rem" }}>
+          <Card className="cardStyle" style={{ width: "10rem" }}>
               <Card.Img className="imgStyle" variant="top" src={Breno} />
               <Card.Body className="cardName">
                 <Card.Title className="cardTitleB">Breno Rodrigues</Card.Title>
