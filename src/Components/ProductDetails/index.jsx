@@ -8,7 +8,7 @@ import './styles.scss';
 const ProductDetails = ({ title, price, category, description, image }) => {
 
     return (
-        <Container fluid="md">
+        <Container fluid="md" className="my-1">
             <h1 className="mt-4">{title}</h1>
             <Row className="product-row">
                 <Col xs={12} md={8} className="product-row-image-container">
@@ -19,14 +19,14 @@ const ProductDetails = ({ title, price, category, description, image }) => {
                         <Badge pill bg="secondary">{category}</Badge>
                     </div>
                     <Row className="my-3">
-                        <Col  md={6}>
+                        <Col>
                             <h3>{new Intl.NumberFormat("pt-BR", {
                                 style: "currency",
                                 currency: "BRL"
                             }).format(price)}
                             </h3>
                         </Col>
-                        <Col  md={6}>
+                        <Col >
                             <Button variant="primary" className="text-uppercase">
                                 <FaShoppingCart className="me-2" /> Comprar
                             </Button>
@@ -38,7 +38,7 @@ const ProductDetails = ({ title, price, category, description, image }) => {
 
                         <Form>
                             <Form.Label>Consultar frete e prazo de entrega</Form.Label>
-                            <InputGroup className="mb-3">
+                            <InputGroup className="mb-2">
                                 <Form.Control
                                     placeholder="Inserir CEP"
                                     type="text"

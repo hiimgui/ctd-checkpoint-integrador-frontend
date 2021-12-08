@@ -1,0 +1,46 @@
+.departamentos-slider {
+
+    .slick-track {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+
+        .slick-slide {
+            height: inherit;
+
+            > div {
+                padding: 0 10px;
+                height: 100%;
+            }
+        }
+
+        .card {
+            max-width: 280px;
+            height: 100%;
+            border:0;
+
+            &-title{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &-img-top {
+                padding: 5px;
+                height: 100%;
+                max-height: 120px;
+                object-fit: contain;
+            }
+
+            &-text {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}

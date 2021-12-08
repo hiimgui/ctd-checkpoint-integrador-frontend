@@ -1,5 +1,4 @@
 .product-row {
-    height: 50vh;
     min-height: 500px;
 
     &-image-container {
@@ -7,7 +6,8 @@
     }
 
     &-image {
-        height: 100%;
+        height: auto;
+        max-height:60vh ;
         width: 100%;
         object-fit: contain;
     }

@@ -43,7 +43,6 @@ export const Carousel = () => {
       return <div className="dots-simbol"></div>;
     },
     responsive: [
-
       {
         breakpoint: 860,
         settings: {
@@ -63,7 +62,6 @@ export const Carousel = () => {
     ],
   };
 
-
   const getRandomItens = (items, number) => {
     items.sort(function () {
       return 0.5 - Math.random();
@@ -73,7 +71,7 @@ export const Carousel = () => {
 
   return (
     <Container fluid="lg" >
-      <div className="mt-4 mb-1 d-flex flex-row align-items-center bd-highlight text-uppercase fw-bold ">
+      <div className="mt-4 mb-1 d-flex flex-row align-items-center text-uppercase fw-bold ">
         <h3 className="flex-fill text-center fw-bold text-secondary">Destaques</h3>
         <Link to="/" className="align-self-end  me-3">
           Ver todas ofertas
