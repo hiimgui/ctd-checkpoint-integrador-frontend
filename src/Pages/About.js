@@ -2,7 +2,6 @@ import "./about.scss";
 import Card from "react-bootstrap/Card";
 import { BsGithub } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
-import Button from "react-bootstrap/Button";
 import Breno from "../../src/Assets/brenor.jpeg";
 import GuiP from "../../src/Assets/guip.jpg";
 import GuiS from "../../src/Assets/guis.jpg";
@@ -15,19 +14,19 @@ const AboutUs = () => {
       <div className="text-center text-black" style={{ marginTop: "30px" }}>
         <h3>Um pouco sobre nossos desenvolvedores.</h3>
       </div>
-      <article className="Container" style={{ marginBottom: "130px" }}>
+      <article className="container" style={{ marginBottom: "130px" }}>
         <div className="title d-flex flex-column flex-sm-row justify-content-space-around align-items-center">
-          <div className="Cards">
-            <Card className="CardStyle" style={{ width: "16rem" }}>
-              <Card.Img className="ImgStyle" variant="top" src={Breno} />
-              <Card.Body>
-                <Card.Title>Breno Rodrigues</Card.Title>
+          <div className="cards">
+            <Card className="cardStyle" style={{ width: "10rem" }}>
+              <Card.Img className="imgStyle" variant="top" src={Breno} />
+              <Card.Body className="cardName">
+                <Card.Title className="cardTitleB">Breno Rodrigues</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
               </Card.Body>
-              <Card.Body>
+              <Card.Body className="cardLink">
                 <a
                   href="https://"
                   className="icons"
@@ -47,17 +46,17 @@ const AboutUs = () => {
               </Card.Body>
             </Card>
           </div>
-          <div className="Cards">
-            <Card className="CardStyle" style={{ width: "16rem" }}>
-              <Card.Img className="ImgStyle" variant="top" src={GuiP} />
-              <Card.Body>
+          <div className="cards">
+            <Card className="cardStyle" style={{ width: "10rem" }}>
+              <Card.Img className="imgStyle" variant="top" src={GuiP} />
+              <Card.Body className="cardName">
                 <Card.Title>Guilherme Procópio</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
               </Card.Body>
-              <Card.Body>
+              <Card.Body className="cardLink">
                 <a
                   href="https://"
                   className="icons"
@@ -77,17 +76,17 @@ const AboutUs = () => {
               </Card.Body>
             </Card>
           </div>
-          <div className="Cards">
-            <Card className="CardStyle" style={{ width: "16rem" }}>
-              <Card.Img className="ImgStyle" variant="top" src={GuiS} />
-              <Card.Body>
-                <Card.Title>Guilherme Santos</Card.Title>
+          <div className="cards">
+            <Card className="cardStyle" style={{ width: "10rem" }}>
+              <Card.Img className="imgStyle" variant="top" src={GuiS} />
+              <Card.Body className="cardName">
+                <Card.Title className="cardTitleS">Guilherme Santos</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
               </Card.Body>
-              <Card.Body>
+              <Card.Body className="cardLink">
                 <a
                   href="https://"
                   className="icons"
@@ -107,17 +106,17 @@ const AboutUs = () => {
               </Card.Body>
             </Card>
           </div>
-          <div className="Cards">
-            <Card className="CardStyle" style={{ width: "16rem" }}>
-              <Card.Img className="ImgStyle" variant="top" src={Rener} />
-              <Card.Body>
-                <Card.Title>Rener Almeida</Card.Title>
+          <div className="cards">
+            <Card className="cardStyle" style={{ width: "10rem" }}>
+              <Card.Img className="imgStyle" variant="top" src={Rener} />
+              <Card.Body className="cardName">
+                <Card.Title className="cardTitleRe">Rener Almeida</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
               </Card.Body>
-              <Card.Body>
+              <Card.Body className="cardLink">
                 <a
                   href="https://"
                   className="icons"
@@ -137,17 +136,17 @@ const AboutUs = () => {
               </Card.Body>
             </Card>
           </div>
-          <div className="Cards">
-            <Card className="CardStyle" style={{ width: "16rem" }}>
-              <Card.Img className="ImgStyle" variant="top" src={Rodrigo} />
-              <Card.Body>
-                <Card.Title>Rodrigo Brasil</Card.Title>
+          <div className="cards">
+            <Card className="cardStyle" style={{ width: "10rem" }}>
+              <Card.Img className="imgStyle" variant="top" src={Rodrigo} />
+              <Card.Body className="cardName">
+                <Card.Title className="cardTitleRo">Rodrigo Brasil</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
               </Card.Body>
-              <Card.Body>
+              <Card.Body className="cardLink">
                 <a
                   href="https://"
                   className="icons"
