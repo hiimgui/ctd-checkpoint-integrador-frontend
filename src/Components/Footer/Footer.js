@@ -30,7 +30,7 @@ const Footer = () => {
                         </div>
 
                         <div className="text-center p-3">
-                            <a className="text-white" target="_blank" href="https://www.digitalhouse.com/bolsas/certifiedtechdeveloper">
+                            <a className="text-white" target="_blank" rel="noreferrer" href="https://www.digitalhouse.com/bolsas/certifiedtechdeveloper">
                                 Digital House / Certified Tech Developer</a>
                         </div>
                     </footer>

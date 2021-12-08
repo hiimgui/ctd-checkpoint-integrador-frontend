@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import Slider from "react-slick";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import { FaChevronLeft, FaChevronRight, FaShoppingCart } from "react-icons/fa";
+
+import { CartContext } from "../../Contexts/CartContexts.js";
 
 import api from "../../services/api.js";
 
@@ -15,6 +17,7 @@ import "./styles.scss";
 
 export const Carousel = () => {
   const [data, setData] = React.useState([]);
+
   useEffect(() => {
     api
       .get(`/products`)
@@ -86,7 +89,9 @@ export const Carousel = () => {
   );
 };
 
-const CardCarousel = ({ id, title, price, category, description, image }) => {
+const CardCarousel = (product) => {
+ const { id, title, price, category, description, image } = product;
+  const {addCart} = useContext(CartContext);
   return (
     <Card>
       <Card.Img variant="top" src={image} />
@@ -107,7 +112,7 @@ const CardCarousel = ({ id, title, price, category, description, image }) => {
           </Card.Subtitle>
         </div>
       </Card.Body>
-      <Button variant="primary" className="text-uppercase">
+      <Button variant="primary" className="text-uppercase"  >
         <FaShoppingCart className="me-2" /> Comprar
       </Button>
     </Card>
