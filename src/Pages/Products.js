@@ -7,8 +7,8 @@ const Products = () => {
   return (
     <>
       <Helmet>
-        <title>{`${
-          filtro ? "CTD Eletrônicos | " + filtro : "Produtos"
+      <title>{`${
+          filtro ? "CTD E-Commerce | " + filtro : "ctd-ecommerce"
         }`}</title>
       </Helmet>
       <CardProduct />

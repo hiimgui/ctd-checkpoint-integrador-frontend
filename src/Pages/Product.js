@@ -22,7 +22,7 @@ const Product = () => {
     return (
     <>
         <Helmet>
-        <title>{`${product.title ? "CTD Eletrônicos | " + product.title : "Produto"}`}</title>
+        <title>{`${product.title ? "CTD E-Commerce | " + product.title : "ctd-ecommerce"}`}</title>
     </Helmet>
 
     <ProductDetails {...product} />

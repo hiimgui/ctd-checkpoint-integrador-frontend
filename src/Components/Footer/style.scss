@@ -14,6 +14,11 @@ a {
 
     &:hover {
         text-decoration: underline;
-        text-decoration-color: grey;
+        text-decoration-color: blue;
     }
+}
+
+.techIcons {
+    display: flex;
+    justify-content: space-evenly;
 }
