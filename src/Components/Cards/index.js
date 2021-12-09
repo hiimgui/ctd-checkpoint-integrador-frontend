@@ -32,8 +32,8 @@ const CardProduct = () => {
   }, []);
   return (
     <>
-      <div className="filtros">
-        <Link className="btn btn-link btn-primary mx-1 my-3" to={`/Products`}>
+      <Container  className="filtros" >
+        <Link className="btn btn-link btn-primary mx-1 my-3 fw-bold" to={`/Products`}>
           Todos
         </Link>
         {categories.map((category) => (
@@ -44,7 +44,7 @@ const CardProduct = () => {
             {category}
           </Link>
         ))}
-      </div>
+      </Container>
       <Container className="grid" fluid>
         {data.map((product) => {
           return (
@@ -59,7 +59,7 @@ const CardProduct = () => {
                 src={product.image}
                 alt="produto-img"
               />
-              <h4>{product.title}</h4>
+              <h4 fw-bold>{product.title}</h4>
               <p>{product.description} </p>
               <span>R$ {product.price},00</span>
             </Link>
