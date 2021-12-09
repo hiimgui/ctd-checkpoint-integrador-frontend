@@ -79,7 +79,7 @@ const Departamentos = () => {
                     )}
                 </Slider>
                 
-                <Link to="/" className="btn btn-outline-primary d-inline-block">
+                <Link to={`/Products/${categoria}`} className="btn btn-outline-primary d-inline-block">
                     Ver mais
                 </Link>
             </Container>
