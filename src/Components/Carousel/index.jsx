@@ -90,8 +90,8 @@ export const Carousel = () => {
 };
 
 const CardCarousel = (product) => {
- const { id, title, price, category, description, image } = product;
-  const {addCart} = useContext(CartContext);
+  const { id, title, price, category, description, image } = product;
+  const { cart, addToCart } = useContext(CartContext);
   return (
     <Card>
       <Card.Img variant="top" src={image} />
@@ -112,7 +112,7 @@ const CardCarousel = (product) => {
           </Card.Subtitle>
         </div>
       </Card.Body>
-      <Button variant="primary" className="text-uppercase"  >
+      <Button variant="primary" className="text-uppercase" onClick={() =>addToCart(product)} >
         <FaShoppingCart className="me-2" /> Comprar
       </Button>
     </Card>
