@@ -19,18 +19,20 @@ const Footer = () => {
                                 <p className="d-flex justify-content-center align-items-center">
                                     <span className="me-3">Checkpoint Integrador / Turma 3 - Grupo 3</span>
                                 </p>
-                                <DiJavascript1 />
-                                <SiSpringboot />
-                                <SiJava />
-                                <FaAws />
-                                <DiDatabase />
-                                <SiHibernate />
-                                <GrReactjs />
+                                <div className="techIcons">
+                                    <DiJavascript1 />
+                                    <SiSpringboot />
+                                    <SiJava />
+                                    <FaAws />
+                                    <DiDatabase />
+                                    <SiHibernate />
+                                    <GrReactjs />
+                                </div>
                             </section>
                         </div>
 
                         <div className="text-center p-3">
-                            <a className="text-white" target="_blank" rel="noreferrer" href="https://www.digitalhouse.com/bolsas/certifiedtechdeveloper">
+                            <a className="text-white" target="_blank" rel="noopener noreferrer" href="https://www.digitalhouse.com/bolsas/certifiedtechdeveloper">
                                 Digital House / Certified Tech Developer</a>
                         </div>
                     </footer>

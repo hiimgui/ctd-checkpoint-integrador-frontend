@@ -2,20 +2,24 @@ import "./about.scss";
 import Card from "react-bootstrap/Card";
 import { BsGithub } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
-import Breno from "../../src/Assets/brenor.jpeg";
-import GuiP from "../../src/Assets/guip.jpg";
-import GuiS from "../../src/Assets/guis.jpg";
-import Rener from "../../src/Assets/rener.jpg";
-import Rodrigo from "../../src/Assets/rodrigo.jpg";
+import Breno from '../../Assets/brenor.jpeg'
+import GuiP from "../../Assets/guip.jpg";
+import GuiS from "../../Assets/guis.jpg";
+import Rener from "../../Assets/rener.jpg";
+import Rodrigo from "../../Assets/rodrigo.jpg";
+import { Helmet } from "react-helmet";
 
 const AboutUs = () => {
   return (
     <>
+      <Helmet>
+        <title>{`${AboutUs.title ? "CTD E-Commerce | " + AboutUs.title : "Sobre Nós"}`}</title>
+      </Helmet>
       <div className="text-center text-black" style={{ marginTop: "30px" }}>
         <h3>Um pouco sobre nossos desenvolvedores.</h3>
       </div>
-      <article className="container" style={{ marginBottom: "130px" }}>
-        <div className="title d-flex flex-column flex-sm-row justify-content-space-around align-items-center">
+      <article className="container" style={{ marginBottom: "70px" }}>
+        <div className="d-flex flex-sm-row flex-column align-content-center flex-wrap">
           <div className="cards">
             <Card className="cardStyle" style={{ width: "10rem" }}>
               <Card.Img className="imgStyle" variant="top" src={Breno} />
@@ -28,7 +32,7 @@ const AboutUs = () => {
               </Card.Body>
               <Card.Body className="cardLink">
                 <a
-                  href="https://"
+                  href="https://github.com/Brenex000006"
                   className="icons"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -36,7 +40,7 @@ const AboutUs = () => {
                   <BsGithub />
                 </a>
                 <a
-                  href="https://"
+                  href="https://www.linkedin.com/in/breno-rodrigues-souza-7464b2211/"
                   className="icons"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -58,7 +62,7 @@ const AboutUs = () => {
               </Card.Body>
               <Card.Body className="cardLink">
                 <a
-                  href="https://"
+                  href="https://github.com/hiimgui"
                   className="icons"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -66,7 +70,7 @@ const AboutUs = () => {
                   <BsGithub />
                 </a>
                 <a
-                  href="https://"
+                  href="https://www.linkedin.com/in/guilherme-procopio-963a3686/"
                   className="icons"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -88,7 +92,7 @@ const AboutUs = () => {
               </Card.Body>
               <Card.Body className="cardLink">
                 <a
-                  href="https://"
+                  href="https://github.com/guilherme-sik"
                   className="icons"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -96,7 +100,7 @@ const AboutUs = () => {
                   <BsGithub />
                 </a>
                 <a
-                  href="https://"
+                  href="https://www.linkedin.com/in/guilherme-santos-38b562206/"
                   className="icons"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -118,7 +122,7 @@ const AboutUs = () => {
               </Card.Body>
               <Card.Body className="cardLink">
                 <a
-                  href="https://"
+                  href="https://github.com/reneralmeida"
                   className="icons"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -126,7 +130,7 @@ const AboutUs = () => {
                   <BsGithub />
                 </a>
                 <a
-                  href="https://"
+                  href="https://www.linkedin.com/in/rener-almeida-869b22212/"
                   className="icons"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -148,7 +152,7 @@ const AboutUs = () => {
               </Card.Body>
               <Card.Body className="cardLink">
                 <a
-                  href="https://"
+                  href="https://github.com/rodrigo-brasil"
                   className="icons"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -156,7 +160,7 @@ const AboutUs = () => {
                   <BsGithub />
                 </a>
                 <a
-                  href="https://"
+                  href="https://www.linkedin.com/in/rodrigo-brasil-272312178/"
                   className="icons"
                   target="_blank"
                   rel="noopener noreferrer"

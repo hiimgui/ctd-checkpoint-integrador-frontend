@@ -1,12 +1,13 @@
 import CardProduct from "../Components/Cards";
-import { useParams } from "react-router";
-import Helmet from "react-helmet";
+import { useParams } from 'react-router-dom';
+import {Helmet} from 'react-helmet';
+
 const Products = () => {
   const { filtro } = useParams();
   return (
     <>
       <Helmet>
-        <title>{`${
+      <title>{`${
           filtro ? "CTD E-Commerce | " + filtro : "ctd-ecommerce"
         }`}</title>
       </Helmet>

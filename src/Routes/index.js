@@ -5,8 +5,8 @@ import Products from "../Pages/Products";
 import Product from "../Pages/Product";
 import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
-import AboutUs from "../Pages/About";
 import Cart from "../Pages/Cart";
+import AboutUs from "../Components/About/About";
 
 const Routlist = () => {
 
