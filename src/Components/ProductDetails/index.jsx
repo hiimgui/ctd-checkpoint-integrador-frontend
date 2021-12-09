@@ -2,11 +2,13 @@ import { Container, Row, Col, Button, Image, Badge } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup'
 import { FaShoppingCart } from 'react-icons/fa';
-
+import { CartContext } from "../../Contexts/CartContexts.js";
+import { useContext } from 'react';
 import './styles.scss';
 
-const ProductDetails = ({ title, price, category, description, image }) => {
-
+const ProductDetails = (product) => {
+    const { id, title, price, category, description, image } = product;
+    const { cart, addToCart } = useContext(CartContext);
     return (
         <Container fluid="md" className="my-1">
             <h1 className="mt-4">{title}</h1>
@@ -27,7 +29,7 @@ const ProductDetails = ({ title, price, category, description, image }) => {
                             </h3>
                         </Col>
                         <Col >
-                            <Button variant="primary" className="text-uppercase">
+                            <Button onClick={() =>addToCart(product)} variant="primary" className="text-uppercase">
                                 <FaShoppingCart className="me-2" /> Comprar
                             </Button>
                         </Col>

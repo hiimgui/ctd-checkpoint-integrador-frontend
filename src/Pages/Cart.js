@@ -1,30 +1,47 @@
 import { useContext } from "react"
 import { CartContext } from "../Contexts/CartContexts.js"
-
+import { Card, Container } from "react-bootstrap"
 
 const Cart = () => {
     const { cart } = useContext(CartContext)
     const { cartItems } = cart;
+    const prices = [];
+    const counts = [];
+    
     return (
-        <div>
+        <>
+        <Container fluid="lg">
             <h2>Cart</h2>
-            <ul>
+            <Card>
                 {
                     cartItems.map((item) => {
                         const { id, title, price, count } = item;
-
+                        prices.push(price)
+                        counts.push(count)
                         return (
-                            <li key={id}>
-                                <span>{title } | </span>
-                                <span>{price} | </span>
-                                <span>{count}</span>
-                            </li>
+                            <>
+                            <Card.Body key={id}>
+                                <Card.Title>{title }  </Card.Title>
+                                <Card.Text>{price}  </Card.Text>
+                                <Card.Text>{count}</Card.Text>
+
+                            </Card.Body>
+                            </>
                         )
                     })
                 }
+                </Card>
+                </Container>
+                    <h4>
+                    {
+                        prices.reduce((a,b) => a+b)
+                    }
+                    </h4>
+                    {
 
-            </ul>
-        </div>
+                    counts.reduce((a,b) => a+b)
+                    }
+                </>
     )
 }
 
