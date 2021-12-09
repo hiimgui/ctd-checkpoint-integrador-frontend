@@ -2,9 +2,17 @@ import "./styles.scss";
 import { CgShoppingCart } from "react-icons/cg";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import Badge from "react-bootstrap/Badge";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import {CartContext} from "../../Contexts/CartContexts";
+
 const Header = () => {
+
+  const {cart}  = useContext(CartContext);
+  const totalItens = cart.cartItems.reduce((acc, item) => acc +item.count, 0);
+
   return (
     <>
       <Navbar
@@ -15,10 +23,10 @@ const Header = () => {
         variant="dark"
       >
         <Container>
-          <Navbar.Brand as={Link} to="/">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Brand as={Link} className="fs-3 fw-bold" to="/">
             CTD E-Commerce
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">
@@ -31,12 +39,13 @@ const Header = () => {
                 SOBRE
               </Nav.Link>
             </Nav>
-            <Nav>
-              <Nav.Link as={Link} to="/Cart">
-                <CgShoppingCart />
-              </Nav.Link>
-            </Nav>
+
           </Navbar.Collapse>
+          <Nav>
+            <Nav.Link as={Link} to="/Cart">
+              <CgShoppingCart size={"2rem"} /><Badge  bg="success"  text="white">{totalItens}</Badge>
+            </Nav.Link>
+          </Nav>
         </Container>
       </Navbar>
     </>

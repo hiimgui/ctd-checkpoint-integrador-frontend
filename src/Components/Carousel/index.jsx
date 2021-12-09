@@ -90,8 +90,8 @@ export const Carousel = () => {
 };
 
 const CardCarousel = (product) => {
-  const { id, title, price, category, description, image } = product;
-  const { cart, addToCart } = useContext(CartContext);
+  const { id, title, price, description, image } = product;
+  const { addToCart } = useContext(CartContext);
   return (
     <Card>
       <Card.Img variant="top" src={image} />
