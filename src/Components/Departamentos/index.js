@@ -22,7 +22,6 @@ const Departamentos = () => {
                     acc[category].products.push(product);
                     return acc
                 }, {});
-                console.log(Object.entries(dados));
                 setCategorias(dados);
             })
             .catch((error) => {
@@ -70,13 +69,13 @@ const Departamentos = () => {
     return (
 
         Object.keys(categorias).map((categoria) =>
-            <Container fluid="lg" className="my-3" >
+            <Container fluid="lg" className="my-3" key={categoria}>
                 <div className="mt-4 mb-1 d-flex flex-row align-items-center text-uppercase fw-bold ">
                     <h4 className="flex-fill fw-bold text-secondary">{categoria}</h4>
                 </div>
 
                 <Slider {...settings}>
-                    {categorias[categoria].products.map((product) => <CardDepartamentos {...product} />
+                    {categorias[categoria].products.map((product) => <CardDepartamentos  key={product.id} {...product} />
                     )}
                 </Slider>
                 

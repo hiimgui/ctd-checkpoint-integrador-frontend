@@ -32,7 +32,7 @@ const Header = () => {
               </Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="#carrinho">
+              <Nav.Link as={Link} to="/Cart">
                 <CgShoppingCart />
               </Nav.Link>
             </Nav>
