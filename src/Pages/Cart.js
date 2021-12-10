@@ -1,6 +1,8 @@
 import { useContext } from "react"
 import { CartContext } from "../Contexts/CartContexts.js"
 import { Card, Container, Row, Col, Button } from "react-bootstrap"
+import { Link } from "react-router-dom"
+import AlertaEmDesenvolvimento from '../Components/AlertaEmDesenvolvimento';
 import CartItens from "../Components/Cart"
 
 const Cart = () => {
@@ -9,17 +11,22 @@ const Cart = () => {
 
     return (
         <>
-            <h2 className="text-center my-4">Cart</h2>
+            <h2 className="text-center my-4 fw-bold">Carrinho de Compras</h2>
             <Container fluid="lg" >
                 <Row>
                     <Col md={12} lg={9}>
                         <ul>
                             {
-                                cartItems.map((item) => {
-                                    return (
-                                        <CartItens product={item} key={item.id} />
-                                    )
-                                })
+                                cartItems.length > 0 ?
+                                    cartItems.map((item) => {
+                                        return (
+                                            <CartItens product={item} key={item.id} />
+                                        )
+                                    }) :
+                                    <>
+                                        <p>O seu carrinho de compras está vazio. Os itens que você adicionar aparecerão aqui.</p>
+                                        <Link to='/'>Retornar para a página inicial</Link>
+                                    </>
                             }
                         </ul>
                     </Col>
@@ -35,7 +42,7 @@ const Cart = () => {
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="d-flex justify-content-between">
-                                <Button variant="dark">Pagamento</Button>
+                                <Button variant="dark" onClick={AlertaEmDesenvolvimento}>Pagamento</Button>
                                 <Button variant="outline-danger" onClick={clearCart} >Limpar</Button>
                             </Card.Footer>
                         </Card>
