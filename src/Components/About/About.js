@@ -37,7 +37,7 @@ const AboutUs = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <BsGithub />
+                  <BsGithub size={"2rem"} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/breno-rodrigues-souza-7464b2211/"
@@ -45,7 +45,7 @@ const AboutUs = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedin />
+                  <FaLinkedin size={"2rem"} />
                 </a>
               </Card.Body>
             </Card>
@@ -67,7 +67,7 @@ const AboutUs = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <BsGithub />
+                  <BsGithub  size={"2rem"}/>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/guilherme-procopio-963a3686/"
@@ -75,7 +75,7 @@ const AboutUs = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedin />
+                  <FaLinkedin size={"2rem"}/>
                 </a>
               </Card.Body>
             </Card>
@@ -97,7 +97,7 @@ const AboutUs = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <BsGithub />
+                  <BsGithub size={"2rem"}/>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/guilherme-santos-38b562206/"
@@ -105,7 +105,7 @@ const AboutUs = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedin />
+                  <FaLinkedin size={"2rem"}/>
                 </a>
               </Card.Body>
             </Card>
@@ -127,7 +127,7 @@ const AboutUs = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <BsGithub />
+                  <BsGithub size={"2rem"}/>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/rener-almeida-869b22212/"
@@ -135,7 +135,7 @@ const AboutUs = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedin />
+                  <FaLinkedin size={"2rem"}/>
                 </a>
               </Card.Body>
             </Card>
@@ -157,7 +157,7 @@ const AboutUs = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <BsGithub />
+                  <BsGithub size={"2rem"}/>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/rodrigo-brasil-272312178/"
@@ -165,7 +165,7 @@ const AboutUs = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedin />
+                  <FaLinkedin size={"2rem"}/>
                 </a>
               </Card.Body>
             </Card>
