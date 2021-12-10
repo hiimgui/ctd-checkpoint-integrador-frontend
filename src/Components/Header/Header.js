@@ -11,7 +11,8 @@ import {CartContext} from "../../Contexts/CartContexts";
 const Header = () => {
 
   const {cart}  = useContext(CartContext);
-  const totalItens = cart.cartItems.reduce((acc, item) => acc +item.count, 0);
+  console.log(cart);
+  const totalItens = cart.cartItems?.reduce((acc, item) => acc +item.count, 0);
 
   return (
     <>

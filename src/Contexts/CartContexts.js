@@ -7,7 +7,7 @@ const saveCart = (cart) => {
     localStorage.setItem("cart", JSON.stringify(cart));
 };
 
-const cartSaved = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+const cartSaved = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : {cartItems:[]};
 const initialState = { ...cartSaved };
 
 const reducer = (state, action) => {
