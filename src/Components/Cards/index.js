@@ -64,7 +64,7 @@ const CardProduct = () => {
               <span>{new Intl.NumberFormat("pt-BR", {
                 style: "currency",
                 currency: "BRL",
-              }).format(price)}</span>
+              }).format(product.price)}</span>
             </Link>
           );
         })}
