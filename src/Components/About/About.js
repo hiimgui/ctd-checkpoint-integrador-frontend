@@ -26,8 +26,8 @@ const AboutUs = () => {
               <Card.Body className="cardName">
                 <Card.Title className="cardTitleB">Breno Rodrigues</Card.Title>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                Estudante Full Stack. Gosta de animes
+                e jogos eletrônicos.
                 </Card.Text>
               </Card.Body>
               <Card.Body className="cardLink">
@@ -56,8 +56,8 @@ const AboutUs = () => {
               <Card.Body className="cardName">
                 <Card.Title>Guilherme Procópio</Card.Title>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                Estudante Full Stack. Apaixonado por fotografia
+                e literatura.
                 </Card.Text>
               </Card.Body>
               <Card.Body className="cardLink">
@@ -86,8 +86,8 @@ const AboutUs = () => {
               <Card.Body className="cardName">
                 <Card.Title className="cardTitleS">Guilherme Santos</Card.Title>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                Estudante de programação, desenvolvimento web.
+                Gosta de viver.
                 </Card.Text>
               </Card.Body>
               <Card.Body className="cardLink">
@@ -116,8 +116,8 @@ const AboutUs = () => {
               <Card.Body className="cardName">
                 <Card.Title className="cardTitleRe">Rener Almeida</Card.Title>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                Estudante Full Stack. Ávido por conhecimento,
+                resolução de problemas.
                 </Card.Text>
               </Card.Body>
               <Card.Body className="cardLink">
@@ -146,8 +146,8 @@ const AboutUs = () => {
               <Card.Body className="cardName">
                 <Card.Title className="cardTitleRo">Rodrigo Brasil</Card.Title>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                Estudante Full Stack. Gosta de tocar violão
+                e competir no Dota 2.
                 </Card.Text>
               </Card.Body>
               <Card.Body className="cardLink">

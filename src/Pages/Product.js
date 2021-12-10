@@ -32,7 +32,7 @@ const Product = () => {
     return (
         <>
             <Helmet>
-                <title>{`${product.title ? "CTD E-Commerce | " + product.title : "ctd-ecommerce"}`}</title>
+                <title>{`${product.title ? "CTD E-Commerce | " + product.title : "CTD E-Commerce"}`}</title>
             </Helmet>
             {error ?
                 <div className="container my-5">
