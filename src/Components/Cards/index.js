@@ -61,7 +61,10 @@ const CardProduct = () => {
               />
               <h4 fw-bold>{product.title}</h4>
               <p>{product.description} </p>
-              <span>R$ {product.price},00</span>
+              <span>{new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              }).format(price)}</span>
             </Link>
           );
         })}
