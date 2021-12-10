@@ -8,12 +8,11 @@ import { SiHibernate, SiJava } from 'react-icons/si';
 
 const Footer = () => {
     return (
-        <>
 
-            <div className="main-div pt-4">
+            <footer className="main-div pt-4">
 
                 <section className="main-footer">
-                    <footer className="text-center text-white">
+                    <main className="text-center text-white">
                         <div className="container p-2 pb-0">
                             <section className="inside-section">
                                 <p className="d-flex justify-content-center align-items-center">
@@ -35,12 +34,12 @@ const Footer = () => {
                             <a className="text-white" target="_blank" rel="noopener noreferrer" href="https://www.digitalhouse.com/bolsas/certifiedtechdeveloper">
                                 Digital House / Certified Tech Developer</a>
                         </div>
-                    </footer>
+                    </main>
                 </section>
 
-            </div>
+            </footer>
 
-        </>
+
     )
 
 }
