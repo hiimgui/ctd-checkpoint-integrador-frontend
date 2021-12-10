@@ -4,11 +4,19 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import { FaShoppingCart } from 'react-icons/fa';
 import { CartContext } from "../../Contexts/CartContexts.js";
 import { useContext } from 'react';
+import Swal from 'sweetalert2';
+import AlertaEmDesenvolvimento from '../AlertaEmDesenvolvimento/index.js';
 import './styles.scss';
 
 const ProductDetails = (product) => {
-    const { id, title, price, category, description, image } = product;
-    const { cart, addToCart } = useContext(CartContext);
+    const { title, price, category, description, image } = product;
+    const { addToCart } = useContext(CartContext);
+
+    const handleSearchCep = (e) => {
+        e.preventDefault();
+        AlertaEmDesenvolvimento()
+    }
+
     return (
         <Container fluid="md" className="my-1">
             <h1 className="mt-4">{title}</h1>
@@ -29,7 +37,7 @@ const ProductDetails = (product) => {
                             </h3>
                         </Col>
                         <Col >
-                            <Button onClick={() =>addToCart(product)} variant="primary" className="text-uppercase">
+                            <Button onClick={() => addToCart(product)} variant="primary" className="text-uppercase">
                                 <FaShoppingCart className="me-2" /> Comprar
                             </Button>
                         </Col>
@@ -38,7 +46,7 @@ const ProductDetails = (product) => {
 
                     <Row className="mt-auto">
 
-                        <Form>
+                        <Form onSubmit={handleSearchCep}>
                             <Form.Label>Consultar frete e prazo de entrega</Form.Label>
                             <InputGroup className="mb-2">
                                 <Form.Control

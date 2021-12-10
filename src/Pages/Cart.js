@@ -1,47 +1,56 @@
 import { useContext } from "react"
 import { CartContext } from "../Contexts/CartContexts.js"
-import { Card, Container } from "react-bootstrap"
+import { Card, Container, Row, Col, Button } from "react-bootstrap"
+import { Link } from "react-router-dom"
+import AlertaEmDesenvolvimento from '../Components/AlertaEmDesenvolvimento';
+import CartItens from "../Components/Cart"
 
 const Cart = () => {
-    const { cart } = useContext(CartContext)
+    const { cart, clearCart } = useContext(CartContext)
     const { cartItems } = cart;
-    const prices = [];
-    const counts = [];
-    
+
     return (
         <>
-        <Container fluid="lg">
-            <h2>Cart</h2>
-            <Card>
-                {
-                    cartItems.map((item) => {
-                        const { id, title, price, count } = item;
-                        prices.push(price)
-                        counts.push(count)
-                        return (
-                            <>
-                            <Card.Body key={id}>
-                                <Card.Title>{title }  </Card.Title>
-                                <Card.Text>{price}  </Card.Text>
-                                <Card.Text>{count}</Card.Text>
-
+            <h2 className="text-center my-4 fw-bold">Carrinho de Compras</h2>
+            <Container fluid="lg" >
+                <Row>
+                    <Col md={12} lg={9}>
+                        <ul>
+                            {
+                                cartItems.length > 0 ?
+                                    cartItems.map((item) => {
+                                        return (
+                                            <CartItens product={item} key={item.id} />
+                                        )
+                                    }) :
+                                    <>
+                                        <p>O seu carrinho de compras está vazio. Os itens que você adicionar aparecerão aqui.</p>
+                                        <Link to='/'>Retornar para a página inicial</Link>
+                                    </>
+                            }
+                        </ul>
+                    </Col>
+                    <Col md={12} lg={3}>
+                        <Card>
+                            <Card.Body>
+                                <Card.Title className="text-center">Total:</Card.Title>
+                                <Card.Text className="fw-bolder fs-2">
+                                    {new Intl.NumberFormat("pt-BR", {
+                                        style: "currency",
+                                        currency: "BRL",
+                                    }).format(cartItems.reduce((acc, curr) => acc + curr.price * curr.count, 0))}
+                                </Card.Text>
                             </Card.Body>
-                            </>
-                        )
-                    })
-                }
-                </Card>
-                </Container>
-                    <h4>
-                    {
-                        prices.reduce((a,b) => a+b)
-                    }
-                    </h4>
-                    {
+                            <Card.Footer className="d-flex justify-content-between">
+                                <Button variant="dark" onClick={AlertaEmDesenvolvimento}>Pagamento</Button>
+                                <Button variant="outline-danger" onClick={clearCart} >Limpar</Button>
+                            </Card.Footer>
+                        </Card>
 
-                    counts.reduce((a,b) => a+b)
-                    }
-                </>
+                    </Col>
+                </Row>
+            </Container>
+        </>
     )
 }
 

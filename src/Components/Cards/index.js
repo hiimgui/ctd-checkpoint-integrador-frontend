@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const CardProduct = () => {
   const { filtro } = useParams();
   const [data, setData] = useState([]);
-  // const [filtro, setFiltro] = useState("");
+  
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     api
@@ -61,7 +61,10 @@ const CardProduct = () => {
               />
               <h4 fw-bold>{product.title}</h4>
               <p>{product.description} </p>
-              <span>R$ {product.price},00</span>
+              <span>{new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              }).format(price)}</span>
             </Link>
           );
         })}

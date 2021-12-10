@@ -3,6 +3,7 @@ $homeBlack: rgba(0, 0, 0, 0.87);
 .main-div {
     width: 100%;
     margin-top: auto;
+    order: 4;
 }
 
 .main-footer {
@@ -21,4 +22,5 @@ a {
 .techIcons {
     display: flex;
     justify-content: space-evenly;
+    font-size: 1.5rem;
 }
