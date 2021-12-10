@@ -13,7 +13,7 @@ const AboutUs = () => {
   return (
     <>
       <Helmet>
-        <title>{`${AboutUs.title ? "CTD E-Commerce | " + AboutUs.title : "Sobre Nós"}`}</title>
+        <title>CTD E-Commerce | Sobre Nós</title>
       </Helmet>
       <div className="text-center text-black" style={{ marginTop: "30px" }}>
         <h3>Um pouco sobre nossos desenvolvedores.</h3>

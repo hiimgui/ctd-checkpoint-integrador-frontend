@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const CardProduct = () => {
   const { filtro } = useParams();
   const [data, setData] = useState([]);
-  // const [filtro, setFiltro] = useState("");
+  
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     api

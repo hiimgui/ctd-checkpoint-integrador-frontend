@@ -7,8 +7,8 @@ import { useContext } from 'react';
 import './styles.scss';
 
 const ProductDetails = (product) => {
-    const { id, title, price, category, description, image } = product;
-    const { cart, addToCart } = useContext(CartContext);
+    const {  title, price, category, description, image } = product;
+    const { addToCart } = useContext(CartContext);
     return (
         <Container fluid="md" className="my-1">
             <h1 className="mt-4">{title}</h1>
